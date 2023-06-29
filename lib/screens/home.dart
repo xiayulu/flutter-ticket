@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ticket/utils/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -11,7 +12,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFeeedf2),
+      backgroundColor: Styles.bgColor,
       body: ListView(children: [
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -19,11 +20,17 @@ class _HomeScreenState extends State<HomeScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Good Morning"),
-                    Text("Book Tickets"),
+                    Text(
+                      "Good Morning",
+                      style: Styles.headLineStyle3,
+                    ),
+                    Text(
+                      "Book Tickets",
+                      style: Styles.headLineStyle1,
+                    ),
                   ],
                 ),
                 Container(
