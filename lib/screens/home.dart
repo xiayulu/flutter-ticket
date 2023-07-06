@@ -1,7 +1,9 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket/screens/hotel.dart';
 import 'package:ticket/screens/ticket_view.dart';
+import 'package:ticket/utils/app_data.dart';
 import 'package:ticket/utils/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -97,7 +99,37 @@ class _HomeScreenState extends State<HomeScreen> {
             TicketView(),
           ]),
         ),
-        Placeholder()
+        const Gap(15),
+        Container(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Hotels",
+                style: Styles.headLineStyle2,
+              ),
+              InkWell(
+                onTap: () {
+                  print("view More");
+                },
+                child: Text(
+                  "View All",
+                  style: Styles.textStyle.copyWith(color: Styles.primaryColor),
+                ),
+              )
+            ],
+          ),
+        ),
+        const Gap(15),
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: const EdgeInsets.only(left: 16),
+          child: Row(
+            children: hotelList.map((e) => HotelView(hotel: e)).toList(),
+          ),
+        ),
+        const Gap(15),
       ]),
     );
   }
