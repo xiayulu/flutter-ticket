@@ -1,6 +1,7 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:ticket/screens/ticket_view.dart';
 import 'package:ticket/utils/app_styles.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -84,9 +85,19 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               ],
             ),
-            const Gap(40),
           ]),
         ),
+        const Gap(15),
+        const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          padding: EdgeInsets.only(left: 16),
+          child: Row(children: [
+            TicketView(),
+            TicketView(),
+            TicketView(),
+          ]),
+        ),
+        Placeholder()
       ]),
     );
   }
