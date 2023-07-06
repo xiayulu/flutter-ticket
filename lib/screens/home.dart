@@ -90,14 +90,11 @@ class _HomeScreenState extends State<HomeScreen> {
           ]),
         ),
         const Gap(15),
-        const SingleChildScrollView(
+        SingleChildScrollView(
           scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.only(left: 16),
-          child: Row(children: [
-            TicketView(),
-            TicketView(),
-            TicketView(),
-          ]),
+          padding: const EdgeInsets.only(left: 16),
+          child: Row(
+              children: ticketList.map((e) => TicketView(ticket: e)).toList()),
         ),
         const Gap(15),
         Container(
