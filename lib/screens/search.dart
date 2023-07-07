@@ -5,6 +5,7 @@ import 'package:ticket/utils/app_styles.dart';
 import 'package:ticket/widgets/button.dart';
 import 'package:ticket/widgets/icon_text.dart';
 import 'package:ticket/widgets/section_lead.dart';
+import 'package:ticket/widgets/tabs.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -31,35 +32,7 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             const Gap(20),
             // tab bar
-            FittedBox(
-              child: Container(
-                padding: const EdgeInsets.all(3.5),
-                decoration: BoxDecoration(
-                  color: const Color(0xFFf4f6fd),
-                  borderRadius: BorderRadius.circular(50),
-                ),
-                child: Row(children: [
-                  Container(
-                    width: size.width * 0.44,
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius:
-                            BorderRadius.horizontal(left: Radius.circular(50))),
-                    child: const Center(child: Text("Airline Tickets")),
-                  ),
-                  Container(
-                    width: size.width * 0.44,
-                    padding: const EdgeInsets.symmetric(vertical: 7),
-                    decoration: const BoxDecoration(
-                        color: Colors.transparent,
-                        borderRadius: BorderRadius.horizontal(
-                            right: Radius.circular(50))),
-                    child: const Center(child: Text("Hotels")),
-                  ),
-                ]),
-              ),
-            ),
+            const TiTabs(first: "Flights", second: "Hotels"),
             // button
             const Gap(25),
             const TiIconText(
