@@ -256,6 +256,7 @@ class TicketDetail extends StatelessWidget {
                 ]),
               ),
             ]),
+            // two dots
             const Positioned(left: 12, top: 384, child: TiPin()),
             const Positioned(right: 12, top: 384, child: TiPin()),
           ],
